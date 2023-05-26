@@ -1,0 +1,21 @@
+kind: Pod
+apiVersion: v1
+
+metadata: 
+
+        name: envpod
+
+spec: 
+
+        containers:
+                - name: c00
+                  image: ubuntu
+                  command: ["/bin/bash" , "-c", "while true; do echo Hello TCS; sleep 5s; done"]
+                  env: 
+                        - name: dbname
+                          value: tcsdb
+
+
+                   
+
+

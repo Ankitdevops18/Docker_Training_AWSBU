@@ -1,0 +1,15 @@
+kind: Pod 
+apiVersion: v1
+metadata:
+        name: multiconpod
+spec:
+  containers:
+              - name: c00
+                image: ubuntu
+                command: ["/bin/bash", "-c", "while true; do echo Test Message; sleep 5 ; done"]
+              - name: c01
+                image: ubuntu
+                command: ["/bin/bash", "-c", "while true; do echo Test Message; sleep 5 ; done"]
+
+                
+                #restartPolicy: Never
