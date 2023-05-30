@@ -1,0 +1,17 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+        name: podlabel
+        labels:
+                name: Ankit
+                env: Dev
+                Company: TCS
+
+
+spec: 
+   containers:
+          - name: c00
+            image: ubuntu
+            command: ["/bin/bash", "-c", "while true; do echo TCS; sleep 5s; done"]
+
+
