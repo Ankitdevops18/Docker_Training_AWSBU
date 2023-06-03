@@ -1,0 +1,16 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+        name: multiconpod
+spec: 
+   containers:
+          - name: c00
+            image: ubuntu
+            command: ["/bin/bash", "-c", "while true; do echo TCS; sleep 5s; done"]
+           
+          - name: c01
+            image: ubuntu
+            command: ["/bin/bash", "-c", "while true; do echo Second Container; sleep 5s; done"]
+
+           
+

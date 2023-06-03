@@ -1,0 +1,24 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata: 
+        name: deploymentrev
+
+spec: 
+        replicas: 3
+        selector: 
+                matchLabels:
+                        type: revision
+        template:
+                metadata:
+                        name: revpod
+                        labels:
+                                type: revision
+                spec:
+                        containers:
+                                - name: c00
+                                  image: ubuntu
+                                  command: ["/bin/bash", "-c", "while true;do echo This is old Pod; sleep 5s; done"]
+
+
+
+

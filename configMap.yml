@@ -1,0 +1,34 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+        name: volconfigmap
+spec:
+        containers:
+                - name: c01
+                  image: ubuntu
+                  command: ["bin/bash", "-c", "while true; do echo Hi Ankit;sleep 5s; done"]
+                  volumeMounts: 
+                        - name: xchange
+                          mountPath: "/tmp/config"
+                - name: c02
+                  image: ubuntu
+                  command: ["bin/bash", "-c", "while true; do echo Hi Ankit;sleep 5s; done"]
+                  volumeMounts:
+                        - name: xchange
+                          mountPath: "/tmp/data"
+
+
+        volumes:
+                - name: xchange
+                  configMap:
+                          name: mymap
+                          items:
+                                - key: sample.conf
+                                  path: sample.conf
+
+
+
+
+
+
+    
